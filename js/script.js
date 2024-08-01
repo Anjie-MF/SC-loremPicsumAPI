@@ -18,6 +18,7 @@ const selectRandomImage = function (images) {
     // randomIndex();
     const randomImage = images[randomIndex]; // use randomIndex to grab a single image from your images array.
     // console.log(randomImage);
+    displayImage(randomImage);//Call the displayImage function;pass it the randomImage variable as an argument.
 };
 
 //display the image
@@ -26,7 +27,10 @@ const displayImage = function (randomImage) {
     const imageAddress = randomImage.download_url;//access the download_url property from the randomImage object. 
     authorSpan.innerText = author;
     img.src = imageAddress;
-    imgDiv.classList.remove("hide");   
+    imgDiv.classList.remove("hide");
 };
 
 //add a click event and commit changes
+button.addEventListener("click", function () {
+    getImage();
+});
